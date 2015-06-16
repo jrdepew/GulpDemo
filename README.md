@@ -1,5 +1,5 @@
 # Demonstration
-<h1>For Demonstration</h1>
+<p>This is just a first pass at deploying NodeJS and Gulp for performance enhancements and frontend efficiency
 
 <h3>Packages Included</h3>
 <table>
