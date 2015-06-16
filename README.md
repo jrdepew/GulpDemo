@@ -55,10 +55,10 @@ var paths = {
 }
 </pre>
 
-<p>The plan is to make all of your changes in the loc.build and then have those changes copied to loc.stage and loc.prod.
+<p>The plan is to make all of your changes in the paths.loc.build and then have those changes copied to paths.loc.stage and paths.loc.prod.
 #### The Tasks
 <ul>
-  <li>gulp js</li>
+  <li><b>gulp js</b><br>check the javascript for errors, parse and beautify the scripts, concatenate the files into one file (name: (config.name).app.min.js), copy the file to <code>paths.loc.stage</code> and <code>paths.loc.prod</code>, and finally notify us that the task is done.</li>
   <li>gulp css</li>
   <li>gulp images</li>
   <li>gulp copyfonts</li>
