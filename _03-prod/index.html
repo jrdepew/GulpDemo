@@ -1,0 +1,320 @@
+<!DOCTYPE html(lang='en')>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Site Name | Landing Page</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=8;IE=9;IE=10"/>
+  <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <link rel="stylesheet" type="text/css" href="css/Bootstrap-330-busi.css"/>
+  <link rel="stylesheet" type="text/css" href="css/alphacare.local.min.css"/>
+  <script type="text/javascript" src="scripts/jquery17.min.js"></script>
+  <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="scripts/alphacare.app.min.js"></script>
+  <!--if lt IE 10
+  link(href='css/alphacare.ie.css', rel='stylesheet')
+  script(type='text/javascript', src='scripts/html5shiv.js')
+  script(type='text/javascript', src='scripts/respond.min.js')
+  -->
+  <style>
+    #contentBody{margin-top: 129px; }
+    .tooltip {font-size:14px;min-width:220px;max-width:300px;margin-top:7px;}
+  </style>
+  <script>
+    $(window).scroll(function () {
+    	//console.log($(window).scrollTop());
+    	if ($(window).scrollTop() > 50) {
+    		$("#siteNav").slideUp("fast");
+    	} else {
+    		$("#siteNav").slideDown("fast");
+    	}
+    });
+    $(document).ready(function() {
+    	$("#content img").addClass("img-responsive");
+    	$("#content img").each(function(){
+    		$(this).removeAttr('width')
+    		$(this).removeAttr('height');
+    	});
+    	if ( !$( "#mainNaviul li" ).length ) {
+    		$( "#nav_btn_bg" ).hide();
+    	}
+    });
+    $(function () {
+    	$('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+</head>
+<body class="sub-home">
+  <nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+    <nav id="siteNav" class="row">
+      <div class="container">
+        <ul class="nav nav-pills pull-right">
+          <li class="audience-marker">Solutions For:</li>
+          <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="lorem ipsum">AudLink1</a></li>
+          <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="lorem ipsum">AudLink2</a></li>
+          <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="lorem ipsum">AudLink3</a></li>
+          <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="lorem ipsum">AudLink4</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header class="row">
+      <div class="container">
+        <div class="col-sm-4 col-xs-12">
+          <div id="logo" class="col-md-5"><a href="index.html"><img src="images/magellan-logo.png" alt="Magellan Healthcare"/></a></div>
+        </div>
+        <div class="col-sm-8 col-xs-12">
+          <nav id="utilityNav">
+            <ul class="breadcrumb">
+              <li class="dropdown"><a id="dropdownmenu1" href="#" data-toggle="dropdown" class="dropdown-toggle">About Website <b class="caret"></b></a>
+                <ul role="menu" aria-labelledby="dropdownMenu1" class="dropdown-menu">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/mhc-home-page/about-magellanhealthcare.aspx">About Page</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="/mhc-home-page/focus-on-caregivers.aspx">Another Page</a></li>
+                </ul>
+              </li>
+              <li><a href="/mhc-home-page/contact-us.aspx"> <span class="fa fa-envelope"> </span><span> Contact Us</span></a></li>
+              <form id="aspnetForm" method="get" action="/site-search.aspx?" onsubmit="javascript:return WebForm_OnSubmit();" role="form" class="form-inline pull-right"></form>
+              <li id="search">
+                <div class="form-group pull-left">
+                  <label for="siteSearch" class="sr-only">Search This Site</label>
+                  <input id="siteSearch" type="text" placeholder="Search" name="q" class="form-control"/>
+                  <div id="searchForm" class="form-group pull-left">
+                    <!-- <label for="searchGo" class="sr-only"><span class="icon-search" title="Search">&nbsp;</span></label>-->
+                    <button id="searchGo" type="submit" class="btn btn-primary btn-search"> <span class="fa fa-search"></span></button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div id="contentBody" class="row">
+      <div id="banner" style="background-image:url('images/mhc-hero.jpg'); background-repeat:no-repeat;background-position:center;" class="jumbotron hidden-xs"></div>
+      <div class="container">
+        <div id="hero-blurb" class="col-xs-7 pull-right">
+          <h1>Magellan Healthcare</h1>
+          <h2>Next generation population health</h2>
+          <p>Helping individuals live healthier, more fulfilling lives with a complete-person approach to care.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      var api;
+      jQuery(document).ready(function() {
+      	api =  jQuery('.banner').revolution(
+      		{
+      		delay:5000,
+      		startheight:600,
+      		startwidth:1600,
+      		navigationType:"bullet",        //bullet, thumb, none, both    (No Thumbs In FullWidth Version !)
+      		navigationArrows:"nexttobullets",    //nexttobullets, verticalcentered, none
+      		navigationStyle:"round",        //round,square,navbar
+      		touchEnabled:"on",            // Enable Swipe Function : on/off
+      		onHoverStop:"on",            // Stop Banner Timet at Hover on Slide on/off
+      		navOffsetHorizontal:0,
+      		navOffsetVertical:0,
+      		stopAtSlide:1,
+      		stopAfterLoops:1,
+      		shadow:0,                //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows  (No Shadow in Fullwidth Version !)
+      		fullWidth:"on"              // Turns On or Off the Fullwidth Image Centering in FullWidth Modus
+      		}
+      	);
+      	$(".youtube").on({'touchstart': function () {
+      		this.click();
+      	}});
+      });
+    </script>
+    <style></style>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      	$('#featured_slider').everslider({
+      		mode: 'circular',
+      		effect: 'slide',
+      		moveSlides: 3,
+      		slideEasing: 'easeInOutCubic',
+      		slideDuration: 700,
+      		pagination: true,
+      		navigation: true,
+      		keyboard: true,
+      		nextNav: '<span class="alt-arrow">Next</span>',
+      		prevNav: '<span class="alt-arrow">Next</span>',
+      		ticker: true,
+      		tickerAutoStart: true,
+      		tickerHover: true,
+      		tickerTimeout: 7000
+      	});
+      	$('.item').first().addClass('active');
+      });
+    </script>
+    <div id="callout" class="well well-blue-gradient">
+      <div class="container">
+        <div class="col-sm-3 col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 magBlueBkgrnd start-name">
+              <h4><strong>Solutions For:</strong></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="row">
+            <div class="col-sm-3 col-sm-12 site-name">
+              <h3><a href="/health-plans.aspx">Health Plans</a></h3>
+            </div>
+            <div class="col-sm-3 col-sm-12 site-name">
+              <h3><a href="/medicaid.aspx">Medicaid / Medicare</a></h3>
+            </div>
+            <div class="col-sm-3 col-sm-12 site-name">
+              <h3><a href="/federal.aspx">Federal</a></h3>
+            </div>
+            <div class="col-sm-3 col-sm-12 site-name">
+              <h3><a href="/employer.aspx">Employers</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section magLtBlueBkgrnd">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="info-box">
+              <div class="info-image-2"><img src="images/samvideosnapmhc.jpg" alt="" class="img-responsive"/>
+                <div class="info-content">
+                  <h3>Trends in Healthcare </h3>
+                  <div class="info-txt">
+                    <p>Magellan Healthcare CEO, Sam Srivastava, shares his insights on key trends and hot topics in a rapidly changing healthcare landscape.</p>
+                    <p><a href="/mhc-home-page/trends-in-healthcare.aspx" class="btn btn-sm btn-warning">Read more</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="info-box">
+              <div class="info-image-2"><img src="images/jc-mf-2-mhc-version.jpg" alt="" class="img-responsive"/>
+                <div class="info-content">
+                  <h3>Caring for Caregivers</h3>
+                  <div class="info-txt">
+                    <p>Magellan is committed to supporting those who support others. We provide valuable resources to those facing challenges in the caregiver journey.</p>
+                    <p><a href="/mhc-home-page/focus-on-caregivers.aspx" class="btn btn-sm btn-warning">Read more</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 col-xs-12 1coltxt">
+            <h3 class="blb">Solutions for Health Plans</h3>
+            <p class="blbtxt">Our population health driven approach addresses the unique needs of health plans, fueling discovery of unmet clinical needs and driving innovation to establish new models of care.</p>
+            <p class="blbtxt"><a href="/health-plans.aspx" class="btn btn-warning">Read More</a></p>
+          </div>
+          <div class="col-sm-9 col-xs-12 1colimg">
+            <div class="section-image"><img src="images/58824400-hp-supporting-850x300.jpg" alt="" class="img-responsive"/></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section magLtBlueBkgrnd">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 col-sm-push-9 col-xs-12 1coltxt">
+            <h3 class="blb">Solutions for Medicaid and Medicare</h3>
+            <p class="blbtxt">Leveraging decades of experience supporting Medicaid and Medicare programs nationwide, we are uniquely positioned to collaborate with public health systems to improve care and lower costs.</p>
+            <p class="blbtxt"><a href="/medicaid.aspx" class="btn btn-warning">Read More</a></p>
+          </div>
+          <div class="col-sm-9 col-sm-pull-3 col-xs-12 1colimg">
+            <div class="section-image"><img src="images/78748800-medicaidmedicare-850x300.jpg" alt="" class="img-responsive"/></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 col-xs-12 1coltxt">
+            <h3 class="blb">Solutions for Federal</h3>
+            <p class="blbtxt">We deliver personalized prevention and recovery solutions that support challenges, both seen and unseen, of members of the military, Veterans and Federal employees, their families and caregivers.</p>
+            <p class="blbtxt"><a href="/federal.aspx" class="btn btn-warning">Read More</a></p>
+          </div>
+          <div class="col-sm-9 col-xs-12 1colimg">
+            <div class="section-image"><img src="/media/90931/167347052-federal-supporting-850x300.jpg" alt="" class="img-responsive"/></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section magLtBlueBkgrnd">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 col-sm-push-9 col-xs-12 1coltxt">
+            <h3 class="blb">Solutions for Employers</h3>
+            <p class="blbtxt">Maintaining a healthy, productive, focused workforce is essential to business success. Our employer solutions support employees at every stage of care, where and when they need it.</p>
+            <p class="blbtxt"><a href="/employer.aspx" class="btn btn-warning">Read More</a></p>
+          </div>
+          <div class="col-sm-9 col-sm-pull-3 col-xs-12 1colimg">
+            <div class="section-image"><img src="/media/90932/offset_114953-employer-supporting-850x300.jpg" alt="" class="img-responsive"/></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <footer class="row">
+      <div id="CTA" class="row">
+        <div class="container">
+          <div class="col-xs-12">
+            <div class="col-sm-4 col-xs-12">
+              <h5></h5>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <h5></h5>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <h5>Get to Know Magellan</h5>
+              <p><a href="/mhc-home-page/contact-us.aspx" title="Contact Us">Contact Us</a></p>
+              <p><a href="/mhc-home-page/about-magellanhealthcare.aspx" title="About MagellanHealthCare">About Magellan Healthcare</a></p>
+              <p><a href="http://www.magellanhealth.com" target="_blank" title="Magellan Health Corporate">Magellan Health Corporate</a></p>
+              <p><a href="http://www.magellanrx.com" target="_blank" title="Magellan Rx">Magellan Rx Management</a></p>
+              <p><a href="http://www.niahealthcare.com" title="NIA Magellan">NIA Magellan</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="footer" class="row">
+      <div class="container">
+        <style>
+          .social-icons{margin:4px 0px 0px 10px;}
+          .icon {color:#fff;padding:0px 8px;}
+          .twitter:hover,.twitter:focus {color:#55ACee;}
+          .linkedin:hover,.linkedin:focus {color:#0077B5;}
+          .utube:hover,.youtube:focus {color:#CD201F;}
+        </style>
+        <div id="footer"> 
+          <div class="col-md-6 col-xs-6">
+            <div class="social-icons"><a href="https://twitter.com/MagellanHealth" class="twitter icon"><i class="fa fa-2x fa-twitter"></i></a><a href="https://www.linkedin.com/company/magellan-health?trk=top_nav_home" class="linkedin icon"><i class="fa fa-2x fa-linkedin"></i></a><a href="http://www.youtube.com/user/MagellanHealth " class="utube icon"><i class="fa fa-2x fa-youtube-play"></i></a></div>
+          </div>
+          <div class="col-md-6 col-xs-6">
+            <div id="mainLogo2" class="pull-right"><img src="/media/56786/mh-logo.png" alt="Magellan Healthcare"/></div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <nav>
+              <ul class="breadcrumb">
+                <li><a href="/mhc-home-page.aspx">Home</a></li>
+                <li><a href="/mhc-home-page/terms-of-use.aspx">Terms of Use</a></li>
+                <li><a href="/mhc-home-page/privacy-policy.aspx">Privacy Policy</a></li>
+                <li><a href="/mhc-home-page/disclaimer.aspx">Disclaimer</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <h6>&copy; 2015 Magellan Health, Inc. All Rights Reserved.</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</body>

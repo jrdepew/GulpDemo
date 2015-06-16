@@ -1,0 +1,283 @@
+doctype html(lang='en')
+head
+	meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+	title Site Name | Landing Page
+	meta(http-equiv='X-UA-Compatible', content='IE=8;IE=9;IE=10')
+	meta(name='viewport', content='width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes')
+	meta(name='description', content='')
+	meta(name='keywords', content='')
+	link(rel='stylesheet', type='text/css', href='css/Bootstrap-330-busi.css')
+	link(rel='stylesheet', type='text/css', href='css/alphacare.local.min.css')
+	script(type='text/javascript', src='scripts/jquery17.min.js')
+	script(type='text/javascript', src='scripts/bootstrap.min.js')
+	script(type='text/javascript', src='scripts/alphacare.app.min.js')
+	//if lt IE 10
+		link(href='css/alphacare.ie.css', rel='stylesheet')
+		script(type='text/javascript', src='scripts/html5shiv.js')
+		script(type='text/javascript', src='scripts/respond.min.js')
+	style.
+		#contentBody{margin-top: 129px; }
+		.tooltip {font-size:14px;min-width:220px;max-width:300px;margin-top:7px;}
+	script.
+		$(window).scroll(function () {
+			//console.log($(window).scrollTop());
+			if ($(window).scrollTop() > 50) {
+				$("#siteNav").slideUp("fast");
+			} else {
+				$("#siteNav").slideDown("fast");
+			}
+		});
+		$(document).ready(function() {
+			$("#content img").addClass("img-responsive");
+			$("#content img").each(function(){
+				$(this).removeAttr('width')
+				$(this).removeAttr('height');
+			});
+			if ( !$( "#mainNaviul li" ).length ) {
+				$( "#nav_btn_bg" ).hide();
+			}
+		});
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+body.sub-home
+	nav.navbar.navbar-default.navbar-fixed-top.hidden-xs
+		nav#siteNav.row
+			.container
+				ul.nav.nav-pills.pull-right
+					li.audience-marker Solutions For:
+					li
+						a(href='#', data-toggle='tooltip', data-placement='bottom', title='lorem ipsum') AudLink1
+					li
+						a(href='#', data-toggle='tooltip', data-placement='bottom', title='lorem ipsum') AudLink2
+					li
+						a(href='#', data-toggle='tooltip', data-placement='bottom', title='lorem ipsum') AudLink3
+					li
+						a(href='#', data-toggle='tooltip', data-placement='bottom', title='lorem ipsum') AudLink4
+		header.row
+			.container
+				.col-sm-4.col-xs-12
+					#logo.col-md-5
+						a(href='index.html')
+							img(src='images/magellan-logo.png', alt='Magellan Healthcare')
+				.col-sm-8.col-xs-12
+					nav#utilityNav
+						ul.breadcrumb
+							li.dropdown
+								a#dropdownmenu1.dropdown-toggle(href='#', data-toggle='dropdown') About Website 
+									b.caret
+								ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+									li(role='presentation')
+										a(role='menuitem', tabindex='-1', href='/mhc-home-page/about-magellanhealthcare.aspx') About Page
+									li(role='presentation')
+										a(role='menuitem', tabindex='-1', href='/mhc-home-page/focus-on-caregivers.aspx') Another Page
+							li
+								a(href='/mhc-home-page/contact-us.aspx') 
+									span.fa.fa-envelope 
+									span  Contact Us
+							form#aspnetForm.form-inline.pull-right(method='get', action='/site-search.aspx?', onsubmit='javascript:return WebForm_OnSubmit();', role='form')
+							li#search
+								.form-group.pull-left
+									label.sr-only(for='siteSearch') Search This Site
+									input#siteSearch.form-control(type='text', placeholder='Search', name='q')
+									#searchForm.form-group.pull-left
+										// <label for="searchGo" class="sr-only"><span class="icon-search" title="Search">&nbsp;</span></label>
+										button#searchGo.btn.btn-primary.btn-search(type='submit') 
+											span.fa.fa-search
+		#contentBody.row
+			#banner.jumbotron.hidden-xs(style="background-image:url('images/mhc-hero.jpg'); background-repeat:no-repeat;background-position:center;")
+			.container
+				#hero-blurb.col-xs-7.pull-right
+					h1 Magellan Healthcare
+					h2 Next generation population health
+					p Helping individuals live healthier, more fulfilling lives with a complete-person approach to care.
+			
+		script.
+			var api;
+			jQuery(document).ready(function() {
+				api =  jQuery('.banner').revolution(
+					{
+					delay:5000,
+					startheight:600,
+					startwidth:1600,
+					navigationType:"bullet",        //bullet, thumb, none, both    (No Thumbs In FullWidth Version !)
+					navigationArrows:"nexttobullets",    //nexttobullets, verticalcentered, none
+					navigationStyle:"round",        //round,square,navbar
+					touchEnabled:"on",            // Enable Swipe Function : on/off
+					onHoverStop:"on",            // Stop Banner Timet at Hover on Slide on/off
+					navOffsetHorizontal:0,
+					navOffsetVertical:0,
+					stopAtSlide:1,
+					stopAfterLoops:1,
+					shadow:0,                //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows  (No Shadow in Fullwidth Version !)
+					fullWidth:"on"              // Turns On or Off the Fullwidth Image Centering in FullWidth Modus
+					}
+				);
+				$(".youtube").on({'touchstart': function () {
+					this.click();
+				}});
+			});
+		style.
+		script(type='text/javascript').
+			$(document).ready(function(){
+				$('#featured_slider').everslider({
+					mode: 'circular',
+					effect: 'slide',
+					moveSlides: 3,
+					slideEasing: 'easeInOutCubic',
+					slideDuration: 700,
+					pagination: true,
+					navigation: true,
+					keyboard: true,
+					nextNav: '<span class="alt-arrow">Next</span>',
+					prevNav: '<span class="alt-arrow">Next</span>',
+					ticker: true,
+					tickerAutoStart: true,
+					tickerHover: true,
+					tickerTimeout: 7000
+				});
+				$('.item').first().addClass('active');
+			});
+		#callout.well.well-blue-gradient
+			.container
+				.col-sm-3.col-xs-12
+					.row
+						.col-xs-12.magBlueBkgrnd.start-name
+							h4
+								strong Solutions For:
+				.col-sm-9.col-xs-12
+					.row
+						.col-sm-3.col-sm-12.site-name
+							h3
+								a(href='/health-plans.aspx') Health Plans
+						.col-sm-3.col-sm-12.site-name
+							h3
+								a(href='/medicaid.aspx') Medicaid / Medicare
+						.col-sm-3.col-sm-12.site-name
+							h3
+								a(href='/federal.aspx') Federal
+						.col-sm-3.col-sm-12.site-name
+							h3
+								a(href='/employer.aspx') Employers
+		.section.magLtBlueBkgrnd
+			.container
+				.row
+					.col-xs-12.col-sm-6
+						.info-box
+							.info-image-2
+								img.img-responsive(src='images/samvideosnapmhc.jpg', alt='')
+								.info-content
+									h3 Trends in Healthcare 
+									.info-txt
+										p Magellan Healthcare CEO, Sam Srivastava, shares his insights on key trends and hot topics in a rapidly changing healthcare landscape.
+										p
+											a.btn.btn-sm.btn-warning(href='/mhc-home-page/trends-in-healthcare.aspx') Read more
+					.col-xs-12.col-sm-6
+						.info-box
+							.info-image-2
+								img.img-responsive(src='images/jc-mf-2-mhc-version.jpg', alt='')
+								.info-content
+									h3 Caring for Caregivers
+									.info-txt
+										p Magellan is committed to supporting those who support others. We provide valuable resources to those facing challenges in the caregiver journey.
+										p
+											a.btn.btn-sm.btn-warning(href='/mhc-home-page/focus-on-caregivers.aspx') Read more
+		.section
+			.container
+				.row
+					.col-sm-3.col-xs-12.1coltxt
+						h3.blb Solutions for Health Plans
+						p.blbtxt Our population health driven approach addresses the unique needs of health plans, fueling discovery of unmet clinical needs and driving innovation to establish new models of care.
+						p.blbtxt
+							a.btn.btn-warning(href='/health-plans.aspx') Read More
+					.col-sm-9.col-xs-12.1colimg
+						.section-image
+							img.img-responsive(src='images/58824400-hp-supporting-850x300.jpg', alt='')
+		.section.magLtBlueBkgrnd
+			.container
+				.row
+					.col-sm-3.col-sm-push-9.col-xs-12.1coltxt
+						h3.blb Solutions for Medicaid and Medicare
+						p.blbtxt Leveraging decades of experience supporting Medicaid and Medicare programs nationwide, we are uniquely positioned to collaborate with public health systems to improve care and lower costs.
+						p.blbtxt
+							a.btn.btn-warning(href='/medicaid.aspx') Read More
+					.col-sm-9.col-sm-pull-3.col-xs-12.1colimg
+						.section-image
+							img.img-responsive(src='images/78748800-medicaidmedicare-850x300.jpg', alt='')
+		.section
+			.container
+				.row
+					.col-sm-3.col-xs-12.1coltxt
+						h3.blb Solutions for Federal
+						p.blbtxt We deliver personalized prevention and recovery solutions that support challenges, both seen and unseen, of members of the military, Veterans and Federal employees, their families and caregivers.
+						p.blbtxt
+							a.btn.btn-warning(href='/federal.aspx') Read More
+					.col-sm-9.col-xs-12.1colimg
+						.section-image
+							img.img-responsive(src='/media/90931/167347052-federal-supporting-850x300.jpg', alt='')
+		.section.magLtBlueBkgrnd
+			.container
+				.row
+					.col-sm-3.col-sm-push-9.col-xs-12.1coltxt
+						h3.blb Solutions for Employers
+						p.blbtxt Maintaining a healthy, productive, focused workforce is essential to business success. Our employer solutions support employees at every stage of care, where and when they need it.
+						p.blbtxt
+							a.btn.btn-warning(href='/employer.aspx') Read More
+					.col-sm-9.col-sm-pull-3.col-xs-12.1colimg
+						.section-image
+							img.img-responsive(src='/media/90932/offset_114953-employer-supporting-850x300.jpg', alt='')
+		.clearfix
+
+		footer.row
+			#CTA.row
+				.container
+					.col-xs-12
+						.col-sm-4.col-xs-12
+							h5
+						.col-sm-4.col-xs-12
+							h5
+						.col-sm-4.col-xs-12
+							h5 Get to Know Magellan
+							p
+								a(href='/mhc-home-page/contact-us.aspx', title='Contact Us') Contact Us
+							p
+								a(href='/mhc-home-page/about-magellanhealthcare.aspx', title='About MagellanHealthCare') About Magellan Healthcare
+							p
+								a(href='http://www.magellanhealth.com', target='_blank', title='Magellan Health Corporate') Magellan Health Corporate
+							p
+								a(href='http://www.magellanrx.com', target='_blank', title='Magellan Rx') Magellan Rx Management
+							p
+								a(href='http://www.niahealthcare.com', title='NIA Magellan') NIA Magellan
+		#footer.row
+			.container
+				style.
+					.social-icons{margin:4px 0px 0px 10px;}
+					.icon {color:#fff;padding:0px 8px;}
+					.twitter:hover,.twitter:focus {color:#55ACee;}
+					.linkedin:hover,.linkedin:focus {color:#0077B5;}
+					.utube:hover,.youtube:focus {color:#CD201F;}
+				#footer 
+					.col-md-6.col-xs-6
+						.social-icons
+							a.twitter.icon(href='https://twitter.com/MagellanHealth')
+								i.fa.fa-2x.fa-twitter
+							a.linkedin.icon(href='https://www.linkedin.com/company/magellan-health?trk=top_nav_home')
+								i.fa.fa-2x.fa-linkedin
+							a.utube.icon(href='http://www.youtube.com/user/MagellanHealth ')
+								i.fa.fa-2x.fa-youtube-play
+					.col-md-6.col-xs-6
+						#mainLogo2.pull-right
+							img(src='/media/56786/mh-logo.png', alt='Magellan Healthcare')
+					.col-md-6.col-sm-6.col-xs-12
+						nav
+							ul.breadcrumb
+								li
+									a(href='/mhc-home-page.aspx') Home
+								li
+									a(href='/mhc-home-page/terms-of-use.aspx') Terms of Use
+								li
+									a(href='/mhc-home-page/privacy-policy.aspx') Privacy Policy
+								li
+									a(href='/mhc-home-page/disclaimer.aspx') Disclaimer
+					.col-md-6.col-sm-6.col-xs-12
+						h6 &copy; 2015 Magellan Health, Inc. All Rights Reserved.
