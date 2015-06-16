@@ -45,7 +45,7 @@
 </ol>
 #### The Paths
 In this section we are creating the paths that are used in the tasks.
-<code>
+<pre>
 var paths = {
   loc: {
       build:      './_01-build/',
@@ -53,12 +53,16 @@ var paths = {
       prod:       './_03-prod/'
   }
 }
-</code>
+</pre>
 
 <p>The plan is to make all of your changes in the loc.build and then have those changes copied to loc.stage and loc.prod.
 #### The Tasks
 <ul>
-  <li>JS
-    <ul>
-
-  </li>
+  <li>gulp js</li>
+  <li>gulp css</li>
+  <li>gulp images</li>
+  <li>gulp copyfonts</li>
+  <li>gulp copybscss</li>
+  <li>gulp copybsjs</li>
+  <li>gulp jquery</li>
+</ul>
