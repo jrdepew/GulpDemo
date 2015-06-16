@@ -34,8 +34,8 @@
 <li>Install Node.js from <a href="https://nodejs.org/" target="_blank">NodeJS.org</a></li>
 <li>Open up a command prompt.</li>
 <li>
-  type the following to make sure nodeJS installed correctly:<br>
-  <code><pre>node -v</pre></code></br>
+  type the following to make sure nodeJS installed correctly:
+  <code><pre>node -v</pre></code>
   This will return the version of the Node install. If it does not then try step 1 again
 </li>
 </ol>
