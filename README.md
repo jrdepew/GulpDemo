@@ -56,10 +56,14 @@ var paths = {
 </pre>
 
 <p>The plan is to make all of your changes in the paths.loc.build and then have those changes copied to paths.loc.stage and paths.loc.prod.
+
+#### The Configuration
+In this section we will define the necessary information regarding this project. Eventually, this will feed into a separate HTML file for a final checklist.
+
 #### The Tasks
 <ul>
   <li><b>gulp js</b><br><i>check the javascript for errors, parse and beautify the scripts, concatenate the files into one file (name: (config.name).app.min.js), copy the file to <code>paths.loc.stage</code> and <code>paths.loc.prod</code>, and finally notify us that the task is done.</i></li>
-  <li>gulp css</li>
+  <li><b>gulp css</b><br><i>first we will comb the file and make everything easy to read, next we concatenate the files into one file (name: (config.name).local.min.css), then we will minify that file, copy the file to <code>paths.loc.stage</code> and <code>paths.loc.prod</code>, and finally notify us that the task is done.</i></li>
   <li>gulp images</li>
   <li>gulp copyfonts</li>
   <li>gulp copybscss</li>
