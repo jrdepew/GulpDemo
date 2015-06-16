@@ -29,9 +29,38 @@
 </table>
 
 <ol>
-<li>Install Node.js from <a href="https://nodejs.org/" target="_blank">NodeJS.org</a></li>
-<li>Open up a command prompt.</li>
-<li>Verify that node is install [node -v]</li>
-<li>Install Gulp [$ npm install --global gulp]</li>
-<li> Verify that Gulp is installed [gulp -v]</li>
+  <li>Install Node.js from <a href="https://nodejs.org/" target="_blank">NodeJS.org</a></li>
+  <li>Open up a command prompt.
+    <ul>
+      <li>Verify that node is install [node -v]</li>
+      <li>Install Gulp [$ npm install --global gulp]</li>
+      <li>Verify that Gulp is installed [gulp -v]</li>
+      <li>Navigate to the project folder</li>
+        <ul>
+          <li>install the dependencies [npm install]</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ol>
+#### The Paths
+In this section we are creating the paths that are used in the tasks.
+<code>
+<pre>
+var paths = {
+  loc: {
+      build:      './_01-build/',
+      stage:      './_02-stage/',
+      prod:       './_03-prod/'
+  }
+}
+</pre>
+</code>
+
+<p>The plan is to make all of your changes in the loc.build and then have those changes copied to loc.stage and loc.prod.
+#### The Tasks
+<ul>
+  <li>JS
+    <ul>
+
+  </li>
