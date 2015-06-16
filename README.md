@@ -46,7 +46,6 @@
 #### The Paths
 In this section we are creating the paths that are used in the tasks.
 <code>
-<pre>
 var paths = {
   loc: {
       build:      './_01-build/',
@@ -54,7 +53,6 @@ var paths = {
       prod:       './_03-prod/'
   }
 }
-</pre>
 </code>
 
 <p>The plan is to make all of your changes in the loc.build and then have those changes copied to loc.stage and loc.prod.
