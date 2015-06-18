@@ -42,7 +42,7 @@ var gulp            = require('gulp'),
     csscomb         = require('gulp-csscomb'),
     stripCssComments= require('gulp-strip-css-comments'),
     autoprefixer    = require('gulp-autoprefixer'),
-    minifyCSS       = require('gulp-minify-css'),
+    //minifyCSS       = require('gulp-minify-css'),
     watch           = require('gulp-watch'),
     plumber         = require('gulp-plumber'),
     clean           = require('gulp-clean'),
@@ -86,7 +86,7 @@ gulp.task('css', function () {
         .pipe(csscomb())
         .pipe(concat((config.name) + ".local.min.css"))
         .pipe(stripCssComments())
-        //.pipe(minifyCSS())
+        .pipe(csso())
         .pipe(gulp.dest((paths.loc.stage) + 'css'))
         .pipe(gulp.dest((paths.loc.prod) + 'css'))
         .pipe(notify({ message: 'Concat & Minify CSS Tasks have been completed and copied to Stage & Prod.'}));

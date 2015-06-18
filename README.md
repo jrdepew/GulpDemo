@@ -16,7 +16,7 @@
   <tr><td>Jade</td><td>markdown template engine</td></tr>
   <tr><td>CSSComb</td><td>CSScomb is a coding style formatter for CSS</td></tr>
   <tr><td>AutoPrefixer</td><td>adds prefixes (ex: :fullscreen becomes :moz-fullscreen)</td></tr>
-  <tr><td>MinifyCSS</td><td>gulp version of clean css (minifier)</td></tr>
+  <tr><td>csso</td><td>A CSS minifier</td></tr>
   <tr><td>Watch</td><td>Watch, that actually is an endless stream</td></tr>
   <tr><td>Plumber</td><td>Prevent pipe breaking caused by errors from gulp plugins</td></tr>
   <tr><td>Clean</td><td>A gulp plugin for removing files and folders</td></tr>
@@ -25,6 +25,9 @@
   <tr><td>PNGQuant</td><td>The pngquant utility as a readable/writable stream</td></tr>
   <tr><td>Notify</td><td>gulp plugin to send messages based using the node-notifier</td></tr>
   <tr><td>SpriteSmith</td><td>Convert images into spritesheets and coordinate maps</td></tr>
+  <tr><td>Strip CSS Comments</td><td>Strip comments from CSS</td></tr>
+  <tr><td>Merge Stream</td><td>Create a stream that emits events from multiple other streams</td></tr>
+
 </tbody>
 </table>
 
@@ -55,7 +58,7 @@ var paths = {
 }
 </pre>
 
-<p>The plan is to make all of your changes in the paths.loc.build and then have those changes copied to paths.loc.stage and paths.loc.prod.
+<p>The plan is to make all of your changes in the paths.loc.build and then have those changes copied to paths.loc.stage and paths.loc.prod.</p>
 
 #### The Configuration
 In this section we will define the necessary information regarding this project. Eventually, this will feed into a separate HTML file for a final checklist.
