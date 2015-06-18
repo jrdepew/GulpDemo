@@ -46,6 +46,7 @@
     </ul>
   </li>
 </ol>
+
 #### The Paths
 In this section we are creating the paths that are used in the tasks.
 <pre>
