@@ -59,7 +59,19 @@ var paths = {
 
 #### The Configuration
 In this section we will define the necessary information regarding this project. Eventually, this will feed into a separate HTML file for a final checklist.
-
+<pre>
+var config = {
+  name:           'demo',
+  instance:       'carbon',
+  version:        '0.0.1',
+  spr:            '000000',
+  cmr:            'r11111',
+  designer:       'Person One',
+  developer:      'Person Two',
+  analyst:        'Person Three',
+  project:        'Person Four'
+}
+</pre>
 #### The Tasks
 <ul>
   <li><b>gulp js</b><br><i>check the javascript for errors, parse and beautify the scripts, concatenate the files into one file (name: (config.name).app.min.js), copy the file to <code>paths.loc.stage</code> and <code>paths.loc.prod</code>, and finally notify us that the task is done.</i></li>
