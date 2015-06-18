@@ -47,7 +47,7 @@
   </li>
 </ol>
 
-#### The Paths
+<h3> The Paths</h3>
 In this section we are creating the paths that are used in the tasks.
 <pre>
 var paths = {
