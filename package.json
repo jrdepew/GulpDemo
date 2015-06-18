@@ -23,8 +23,12 @@
     "gulp": "^3.9.0",
     "gulp-batch": "^1.0.5",
     "gulp-bower": "0.0.10",
+    "gulp-csso": "^1.0.0",
     "gulp-sass": "^2.0.1",
-    "gulp-spritesmith": "0.0.2"
+    "gulp-spritesmith": "0.0.2",
+    "gulp-strip-css-comments": "^1.1.0",
+    "gulp.spritesmith": "^3.8.2",
+    "merge-stream": "^0.1.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

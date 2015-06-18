@@ -27,9 +27,9 @@ var config = {
   spr:            '000000',
   cmr:            'r11111',
   designer:       'Person One',
-  Developer:      'Person Two',
-  Analyst:        'Person Three',
-  Project:        'Person Four'
+  developer:      'Person Two',
+  analyst:        'Person Three',
+  project:        'Person Four'
 }
 // =============================================================================
 // DEPENDENCIES.................................................................
@@ -40,6 +40,7 @@ var gulp            = require('gulp'),
     jshint          = require('gulp-jshint'),
     jade            = require('gulp-jade'),
     csscomb         = require('gulp-csscomb'),
+    stripCssComments= require('gulp-strip-css-comments'),
     autoprefixer    = require('gulp-autoprefixer'),
     minifyCSS       = require('gulp-minify-css'),
     watch           = require('gulp-watch'),
@@ -47,18 +48,18 @@ var gulp            = require('gulp'),
     clean           = require('gulp-clean'),
     gutil           = require('gulp-util'),
     imagemin        = require('gulp-imagemin'),
+    spritesmith     = require('gulp.spritesmith'),
+    csso            = require('gulp-csso'),
+    merge           = require('merge-stream'),
     pngquant        = require('imagemin-pngquant'),
     batch           = require('gulp-batch'),
-    //sprites         = require('gulp-sprite'),
-    //sass            = require('gulp-sass'),
-    //pally           = require('gulp-pa11y'),
-    //bower           = require('gulp-bower'),
     notify          = require('gulp-notify');
 // =============================================================================
 // Starting the Tasks...........................................................
 // =============================================================================
 gulp.task('js', function(){
     gulp.src(paths.loc.build + 'scripts/*.js')
+        .pipe(plumber())
         .pipe(jshint())
         .pipe(uglify())
         .pipe(concat((config.name) + ".app.min.js"))
@@ -66,36 +67,40 @@ gulp.task('js', function(){
         .pipe(gulp.dest((paths.loc.prod) + '/scripts'))
         .pipe(notify({ message: 'JSHINT - Uglify - Concat JS Tasks have been completed and copied to Stage & Prod.' }));
 });
-
-//gulp.task('sprites', function () {
-//    gulp.src(paths.loc.build + 'sprites/*.png')
-//        .pipe(sprite({
-//            imagePath: paths.loc.build + 'images/99-sprite.png',
-//            cssPath: paths.loc.build + 'css/99-sprite.css',
-            //preprocessor:
-//        }))
-//        .pipe(notify({ message: 'Sprite of images is done and CSS has been added to build.' }));
-//});
-
+gulp.task('sprite', function () {
+    var spriteData = gulp.src(paths.loc.build + 'sprites/*.png').pipe(spritesmith({
+        imgName: 'sprite.png',
+        cssName: '99-sprite.css'
+    }));
+    var imgStream = spriteData.img
+        .pipe(imagemin())
+        .pipe(gulp.dest((paths.loc.build) + 'images/'));
+    var cssStream = spriteData.css
+        .pipe(csso())
+        .pipe(gulp.dest((paths.loc.build) + 'css/'));
+    return merge(imgStream, cssStream);
+});
 gulp.task('css', function () {
     gulp.src(paths.loc.build + 'css/*.css')
-        //.pipe(csscomb())
+        .pipe(plumber())
+        .pipe(csscomb())
         .pipe(concat((config.name) + ".local.min.css"))
-        .pipe(minifyCSS())
+        .pipe(stripCssComments())
+        //.pipe(minifyCSS())
         .pipe(gulp.dest((paths.loc.stage) + 'css'))
         .pipe(gulp.dest((paths.loc.prod) + 'css'))
         .pipe(notify({ message: 'Concat & Minify CSS Tasks have been completed and copied to Stage & Prod.'}));
 });
-//gulp.task('jade', function () {
-//    gulp.src(paths.loc.build + 'jade/*.jade')
-//        .pipe(plumber())
-//        .pipe(jade({
-//            pretty: true
-//        }))
-//        .pipe(gulp.dest((paths.loc.stage)))
-//        .pipe(gulp.dest((paths.loc.prod)))
-//        .pipe(notify({ message: 'We have magically created the boilerplate templates for you. Enjoy.'}));
-//});
+gulp.task('jade', function () {
+    gulp.src(paths.loc.build + 'jade/*.jade')
+        .pipe(plumber())
+        .pipe(jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest((paths.loc.stage)))
+        .pipe(gulp.dest((paths.loc.prod)))
+        .pipe(notify({ message: 'We have magically created the boilerplate templates for you. Enjoy.'}));
+});
 gulp.task('images', function () {
     return gulp.src(paths.loc.build + 'images/**/*.*')
         .pipe(imagemin({
@@ -145,4 +150,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['js', 'css', 'images', 'copyfonts', 'copybscss', 'copybsjs','jquery']);
+gulp.task('default', ['js', 'css', 'sprite', 'images', 'copyfonts', 'copybscss', 'copybsjs','jquery']);
