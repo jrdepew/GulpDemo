@@ -63,11 +63,11 @@ In this section we will define the necessary information regarding this project.
 #### The Tasks
 <ul>
   <li><b>gulp js</b><br><i>check the javascript for errors, parse and beautify the scripts, concatenate the files into one file (name: (config.name).app.min.js), copy the file to <code>paths.loc.stage</code> and <code>paths.loc.prod</code>, and finally notify us that the task is done.</i></li>
-  <li><b>gulp sprites</b><i>check the <code>paths.loc.build</code> sprites folder for .png files. Then we tell the task what the final names of the PNG and CSS file will be named. Finally, we stream create the image and css files and put them in the <code>paths.loc.build</code> location</i></li>
+  <li><b>gulp sprites</b><br><i>check the <code>paths.loc.build</code> sprites folder for .png files. Then we tell the task what the final names of the PNG and CSS file will be named. Finally, we stream create the image and css files and put them in the <code>paths.loc.build</code> location</i></li>
   <li><b>gulp css</b><br><i>first we will comb the file and make everything easy to read, next we concatenate the files into one file (name: (config.name).local.min.css), then we will minify that file, copy the file to <code>paths.loc.stage</code> and <code>paths.loc.prod</code>, and finally notify us that the task is done.</i></li>
-  <li><b>gulp images</b><i>Check the <code>paths.loc.build</code> images directory for all image types. Then minimize the images and finally output the minimized files to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories. </i></li>
-  <li><b>gulp copyfonts</b><i>Copy the entire <code>paths.loc.build</code> /fonts/ items to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i></li>
-  <li><b>gulp copybscss</b><i>Copy the <code>paths.loc.build</code> /vendor/ Bootstrap CSS file to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i>
-  <li><b>gulp copybsjs</b><i>Copy the <code>paths.loc.build</code> /vendor/ Bootstrap JS file to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i>
-  <li><b>gulp jquery</b><i>Copy the <code>paths.loc.build</code> /vendor/ jQuery file to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i>
+  <li><b>gulp images</b><br><i>Check the <code>paths.loc.build</code> images directory for all image types. Then minimize the images and finally output the minimized files to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories. </i></li>
+  <li><b>gulp copyfonts</b><br><i>Copy the entire <code>paths.loc.build</code> /fonts/ items to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i></li>
+  <li><b>gulp copybscss</b><br><i>Copy the <code>paths.loc.build</code> /vendor/ Bootstrap CSS file to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i>
+  <li><b>gulp copybsjs</b><br><i>Copy the <code>paths.loc.build</code> /vendor/ Bootstrap JS file to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i>
+  <li><b>gulp jquery</b><br><i>Copy the <code>paths.loc.build</code> /vendor/ jQuery file to the <code>paths.loc.stage</code> and <code>paths.loc.prod</code> directories.</i>
 </ul>
